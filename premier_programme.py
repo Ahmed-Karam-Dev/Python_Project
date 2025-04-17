@@ -82,8 +82,13 @@ for i in range(0,NBR_QUESTION):
 
 
 print(f"Votre note est : {bonus} / {NBR_QUESTION}")
-if not bonus == NBR_QUESTION:
-    print("Pas mal!")
-else :
+if  bonus == NBR_QUESTION:
     print("Géniaaaaal, t'es le meilleur")
+elif  bonus == 0 :
+    print("Révisez vos maths!")
+elif bonus >= 2 :
+    print("Pas mal !")
+else :
+    print("Peut mieux faire")
+    
 
