@@ -37,20 +37,53 @@ généralement, il n'a pas de constantes dans python mais par convention on déc
 
 
 
-def demander_nom():
-    nom_reponse = ""
-    nom_reponse = input("Quel est votre nom ? ")
+# def demander_nom():
+#     nom_reponse = ""
+#     nom_reponse = input("Quel est votre nom ? ")
 
-    return nom_reponse
-prenom = "Ahmed"
-nom = demander_nom()
-print("Votre nom est : " +nom)
-print(f"Votre nom est : {nom}")
-print("Votre nom est : %s %s" % (nom,prenom))
-print("""
-Dima Dima Raja
-        o li mabghana ta3ma 3ayno
-""")
+#     return nom_reponse
+# prenom = "Ahmed"
+# nom = demander_nom()
+# print("Votre nom est : " +nom)
+# print(f"Votre nom est : {nom}")
+# print("Votre nom est : %s %s" % (nom,prenom))
+# print("""
+# Dima Dima Raja
+#         o li mabghana ta3ma 3ayno
+# """)
 
 
-print("Dima Dima Raja")
+# print("Dima Dima Raja")
+import random
+
+bonus = 0
+NBR_QUESTION = 4
+for i in range(0,NBR_QUESTION):
+    print(f"Question n°{i+1} sur {NBR_QUESTION}")
+    nbr1 = random.randint(1,10)
+    nbr2 = random.randint(1,10)
+    operateur = random.choice(["+","-","*","/"])
+    reponse = input(f"Calculez: {nbr1} {operateur} {nbr2} = ")
+    if operateur == "+":
+        result = nbr1 + nbr2
+    elif operateur == "*":
+        result = nbr1 * nbr2
+    elif operateur == "/":
+        result = int(nbr1 / nbr2)
+    else :
+        result = nbr1 - nbr2
+
+    if int(reponse) == result :
+        print("Réponse correcte")
+        bonus += 1
+    else :
+        print("Réponse incorrecte")
+    print()
+
+
+print(f"Votre note est : {bonus} / {NBR_QUESTION}")
+if not bonus == NBR_QUESTION:
+    print("Pas mal!")
+else :
+    print("Géniaaaaal, t'es le meilleur")
+
